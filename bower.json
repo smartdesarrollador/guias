@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "homepage": "https://github.com/smartdesarrollador/guias",
+  "authors": [
+    "sistema5000smart@gmail.com"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1"
+  }
+}
