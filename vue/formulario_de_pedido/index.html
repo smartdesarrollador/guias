@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="estilo.css">
+
+
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- v-cloak hides any un-compiled data bindings until the Vue instance is ready. -->
+
+<form id="main" v-cloak>
+
+  <h1>Services</h1>
+
+  <ul>
+      <!-- Loop through the services array, assign a click haendler, and set or
+           remove the "active" css class if needed -->
+      <li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+          <!-- Display the name and price for every entry in the array .
+              Vue.js has a built in currency filter for formatting the price -->
+          {{service.name}} <span>{{service.price | currency}}</span>
+      </li>
+  </ul>
+
+  <div class="total">
+      <!-- Calculate the total price of all chosen services. Format it as currency. -->
+      Total: <span>{{total() | currency}}</span>
+  </div>
+
+</form>
+
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="https://unpkg.com/lodash@4.16.0"></script>
+<script src="../../bower_components/vue/dist/vue.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="estilo.css">
+
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="hola">
+    <h3>{{ titulo }}</h3>
+
+    <input v-model="contenido" type="text">
+
+    <button v-on:click="mi_funcion">agregar</button>
+
+    <ul>
+      <li v-for="arr of array">
+          {{ arr.texto }}
+          <div v-if="arr.texto === 'texto 1'"> - aprovado </div>
+      </li>
+    </ul>
+  
+  </div>
+
+
+  
+  
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="https://unpkg.com/lodash@4.16.0"></script>
+<script src="../../../bower_components/vue/dist/vue.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
