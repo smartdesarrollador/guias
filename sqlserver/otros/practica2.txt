@@ -1,0 +1,16 @@
+select ven_codigo
+from Usuario
+where usu_nombreUsuario='Ricardo'
+
+select * from Usuario
+
+select ven_codigo
+from Vendedor v, distrito d
+where v.dis_codigo=d.dis_codigo and d.dis_nombreDistrito='san miguel'
+
+select * from Vendedor
+
+select usu_nombreUsuario
+from Usuario u,maquinaRegistradora m,Surtidor s, factura f
+where u.ven_codigo=m.ven_codigo and m.maquiRe_codigo=s.maquiRe_codigo and s.sur_codigo=f.suc_codigo 
+and DAY(f.fa_fecha)=02

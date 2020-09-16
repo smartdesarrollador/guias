@@ -1,0 +1,111 @@
+funciones
+son de 3 tipos:
+- escalares
+- tabla en linea
+- tabla de multisentencias
+
+
+create function nombre(parametros)
+returns tipodedato AS
+Begin 
+end return dato
+
+1)FUNCION QUE DEVUELVA EL PRECIO PROMEDIO DE TODOS LOS PRODUCTOS
+
+Create function Promedio()
+Returns decimal
+AS 
+Begin
+Declare @prom decimal
+Select @prom= AVG(UnitPrice)
+from Products
+return @prom
+End
+print dbo.Promedio()
+
+2) FUNCION QUE RETORNE EL # DE EMPLEADOS
+
+Create function CuentaEmp()
+Returns int
+AS 
+Begin
+Declare @cont int
+Select @cont= count(EmployeeID)
+from Employees
+return @cont
+End
+print dbo.CuentaEmp()
+
+3)calcular el # de pedidos asociados a un codigo de empleado dado como dato para el presente año
+
+Create function CuentaPedidos(@idemp int)
+Returns int
+AS 
+Begin
+Declare @cont int
+Select @cont= count(*)
+from Orders
+where EmployeeID= @idemp
+and YEAR(GETDATE())=YEAR(OrderDate)
+return @cont
+end
+drop function CuentaPedidos
+print dbo.CuentaPedidos(8)
+
+4)funcion que reciba el nombre del pais destinatario(shipcity) y devuelva el total o la suma de unidades vendidas a ese pais
+
+create function  TotalUnidades(@pais nvarchar)
+returns int
+AS
+Begin
+Declare @cont int
+Select @cont=SUM(Quantity)
+FROM Orders O, OrderDetails OD
+WHERE O.OrderID= OD.OrderID
+AND O.ShipCity=@pais
+return @cont
+end
+-----------------------------------
+
+funcion tabla en linea
+
+create fuction nombre(param)
+returns table
+AS
+Return(sentencia sql)
+
+5)listar los clientes de USA
+
+create function ClientesUSA()
+Returns TABLE
+AS
+Return(Select * from Customers where Country='USA')
+
+Select * from dbo.ClientesUSA()
+WHERE City like '%a%'0
+
+funcion tabla multisentencia
+create function nombre(param)
+returns@tabla TABLE(campos tipos)
+as
+begin
+
+6)listar un producto codigo,descrpcion y precio
+
+CREATE FUNCTION Productos()
+Returns @tabla TABLE
+(codigo INT, descripcion varchar(50),precio decimal)
+AS
+begin
+insert into @tabla
+select productID,productName,UnitPrice from Products
+return
+end
+
+7) listar para un orderid dado su contenido
+-codproducto
+-cantidad
+-precio
+-subtotal
+
+

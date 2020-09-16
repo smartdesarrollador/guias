@@ -1,0 +1,83 @@
+funciones
+
+de 3 tipos:
+-escalares
+-tabla en linea
+-tabla de multisentencia
+
+------------------------------------------------
+create function nombre (parametros)
+returns tipo de dato as
+
+begin____________
+     ____________
+     ____________
+
+return dato
+end
+
+-------------------------------------------------
+
+1)funcion que devulva el precio promedio de todos los productos
+
+Create function Promedio()
+Returns decimal
+as
+Begin 
+      Declare @prom decimal
+      Select @prom=AVG(unitPrice)
+      from products
+      return @prom
+End
+
+print dbo.Promedio()
+
+2)funcion que retorna el numero de empleados
+
+Create function CuentaEmp()
+Returns int
+as
+Begin 
+      Declare @cont int
+      Select @cont=COUNT(EmployeeID)
+      from Employees
+      return @cont
+End
+
+drop function CuentaEmp
+
+print dbo.CuentaEmp()
+
+
+
+3)calcular el numero de pedidos asociados a un codigo 
+de empleado dado como dato,
+para el presente año.
+
+Create function CuentaPedidos(@idemp int)
+Returns int
+as
+Begin 
+      Declare @cont int
+      Select @cont=COUNT(*)
+      from orders
+      where EmployeeID=@idemp
+      AND YEAR(GETDATE())=YEAR(OrderDate)
+      return @cont
+End
+
+drop function CuentaPedidos
+
+print dbo.CuentaPedidos(1)
+
+4)funcion que reciba el nombre del pais destinatario(shipcity) y devuelva el
+total o la suma de unidades vendidas a ese pais
+
+------------------------------------------------------------------------------
+
+create function nombre (param)
+returns table
+as
+return (sentencia sql)
+
+5)listar los clientes 

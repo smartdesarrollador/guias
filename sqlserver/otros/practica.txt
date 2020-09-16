@@ -1,0 +1,84 @@
+create procedure descuentos1111111
+
+@des nvarchar(10)
+
+
+as
+ 
+     select SUM(pro_precio+10)
+     from producto
+     where pro_nombre=@des
+      
+
+  
+  exec descuentos1111111 'diesel'
+  
+  
+  
+
+  
+  
+  
+  
+ create procedure usp_ConsultaClientes
+as
+BEGIN
+    Select  CustomerID,CompanyName from Customers
+END
+exec  usp_ConsultaClientes
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  create procedure promedio_vendido
+  
+  @prom decimal
+  as
+     begin
+     
+     end
+     
+  exec promedio_vendido 
+  
+  
+  
+  
+  
+  create procedure comision
+  
+  @com decimal
+  
+  as
+    begin
+    
+    end
+    
+ exec comision
+ 
+ 
+ 
+ 
+ 
+ 
+   create procedure stock
+   
+   @stock nvarchar
+   
+   as 
+     begin
+     
+     end
+     
+  exec stock
+  

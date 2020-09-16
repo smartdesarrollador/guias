@@ -1,0 +1,197 @@
+create database Gri
+
+use Gri
+
+--creamos la tabla credito
+
+create table credito(
+cre_codigo int not null primary key,
+cre_nombre nvarchar(10)
+)
+
+--creamos la tabla dsitrito
+
+create table distrito(
+dis_codigo nvarchar(10)not null primary key,
+dis_nombreDistrito nvarchar(10)
+)
+
+--creamos la tabla departamento
+
+create table departamento(
+dep_codigo nvarchar(10)not null primary key,
+dep_nombreDepartamento nvarchar(10)
+)
+
+--creamos la tabla Cliente de linea de credito
+
+create table clienteCredito(
+cliCre_codigo nvarchar(10) not null primary key,
+cliCre_razonSocial varchar(20), 
+cliCre_RucCliente varchar(10),
+cliCre_telefono char(9),
+cliCre_montoSolicitado decimal(10,2),
+cliCre_fechaInscripcion date,
+cre_codigo int not null,
+dis_codigo nvarchar(10)not null,
+dep_codigo nvarchar(10)not null,
+foreign key(cre_codigo)references credito(cre_codigo),
+foreign key(dis_codigo)references distrito(dis_codigo),
+foreign key(dep_codigo) references departamento(dep_codigo)
+)
+
+--creacion de la tabla modelos:
+create table Modelo(
+mo_codigo int not null primary key,
+mo_descripcion varchar(15)
+)
+
+--creamos la tabla vehiculo:
+
+create table Vehiculo(
+ve_codigo int not null primary key identity(1,1),
+ve_placa nchar(15),
+ve_color nvarchar(15),
+mo_codigo int not null,
+cliCre_codigo nvarchar(10) not null,
+foreign key(mo_codigo) references Modelo(mo_codigo),
+foreign key(cliCre_codigo)references clienteCredito(cliCre_codigo)
+)
+
+--creamos la tabla donde estaran los codigos de las tarjetas y vales:
+
+create table tarjeta_vale(
+codigo nvarchar(15) not null primary key,
+cliCre_codigo nvarchar(10) not null,
+foreign key(cliCre_codigo) references clienteCredito(cliCre_codigo)
+)
+
+----------------------
+
+alter table tarjeta_vale add monto decimal(8,2)
+-----------------------
+
+create table turno(
+tu_codigo int not null primary key,
+tu_descripcion nvarchar(10)
+)
+
+
+-----------------------------------------------------------------------------------
+
+create table Vendedor(
+ven_codigo int not null primary key,
+ven_nombre nvarchar(20),
+ven_apellidoPaterno nvarchar(20),
+ven_apellidoMaterno nvarchar(20),
+ven_edad nchar(3),
+ven_sexo nchar(1),
+ven_DNI nchar(10),
+ven_AFP nvarchar(15),
+ven_sueldo decimal(6,2),
+tu_codigo int not null,
+dis_codigo nvarchar(10)not null,
+dep_codigo nvarchar(10)not null,
+foreign key(tu_codigo)references turno(tu_codigo),
+foreign key(dis_codigo)references distrito(dis_codigo),
+foreign key(dep_codigo)references departamento(dep_codigo),
+)
+
+--creamos la tabla usuario:
+
+create table Usuario(
+ven_codigo int not null primary key,
+usu_nombreUsuario nvarchar(10),
+usu_contraseña nvarchar(10)
+)
+
+
+---------------------------------
+alter table Usuario add foreign key(ven_codigo)references Vendedor
+---------------------------------
+
+--creamos la tabla maquinaRegistradora:
+
+create table maquinaRegistradora(
+maRe_codigo int not null primary key,
+maRe_nombre nvarchar(15),
+ven_codigo int not null,
+foreign key(ven_codigo) references Usuario(ven_codigo)
+)
+
+--creamos la tabla surtidor:
+
+create table Surtidor(
+sur_codigo int not null primary key,
+sur_nombre nvarchar(15),
+maRe_codigo int not null,
+foreign key (maRe_codigo) references maquinaRegistradora(maRe_codigo)-- esta es la relacion entre vendedor y surtidor(M;1)
+)
+
+---------------------------------------------------------------------------------------------------------------
+--creamos la tabla sucursal:
+
+create table sucursal(
+suc_codigo int not null primary key,
+suc_nombreSucursal nvarchar(30),
+suc_direccion nvarchar(30),
+suc_rucGrifo nvarchar(30)
+)
+
+-------------------------
+alter table sucursal add suc_nombreGrifo nvarchar(30)
+alter table sucursal add suc_rucGrifo nvarchar(30) 
+-------------------------
+
+--creamos la tabla producto:
+
+create table producto(
+pro_codigo int not null primary key,
+pro_nombre nvarchar(50),
+pro_unidad nvarchar(15),
+pro_precio decimal(6,2)
+)
+
+--creamos la tabla factura:
+
+create table factura(
+fa_codigo int not null primary key,
+fa_cantidad decimal(6,2),
+fa_importe decimal(10,2),
+fa_fecha date,
+sur_codigo int not null,
+suc_codigo int not null,
+pro_codigo int not null,
+foreign key(sur_codigo)references Surtidor(sur_codigo),
+foreign key(suc_codigo)references sucursal(suc_codigo),
+foreign key(pro_codigo)references producto(pro_codigo)
+)
+
+----------------------------
+alter table factura add codigo nvarchar(15) not null
+alter table factura add foreign key(codigo) references tarjeta_vale(codigo)
+----------------------------
+
+--creamos la tabla forma de pago:
+
+create table formaPago(
+for_codigo int not null primary key,
+for_nomre nvarchar(10)
+)
+
+--creamos la tabla tickets:
+
+create table ticket(
+ti_codigo nvarchar(15) not null primary key,
+ti_cantidad decimal(6,2),
+ti_importe decimal(10,2),
+ti_fecha date,
+sur_codigo int not null,
+suc_codigo int not null,
+pro_codigo int not null,
+for_codigo int not null,
+foreign key(sur_codigo)references Surtidor(sur_codigo),
+foreign key(suc_codigo)references sucursal(suc_codigo),
+foreign key(pro_codigo)references producto(pro_codigo),
+foreign key(for_codigo)references formaPago(for_codigo),
+)

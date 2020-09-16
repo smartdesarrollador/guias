@@ -1,0 +1,136 @@
+Procedimiento Almacenamiento
+
+store procedure 
+sintaxis:
+
+Drop/Alter/Create procedure Nombre
+           @parametro1   tipodato,
+           @parametro2   tipodato
+     as
+      [BEGIN]
+            sentencias sql
+      [END]
+
+---------------------------------------------------------------------------------
+
+Ejemplo1
+
+*Procedimiento que liste los clientes
+
+create procedure usp_ConsultaClientes
+as
+BEGIN
+    Select  CustomerID,CompanyName from Customers
+END
+exec  usp_ConsultaClientes
+
+-------------------------------------------------------------------------------
+
+Ejemplo2:
+*listar pedidos entre 2 fechas
+
+create procedure PedidosxFechas
+@F1  Datetime,
+@F2  Datetime
+as
+  select * from orders
+  where  OrderDate  between @F1 AND @F2
+
+exec PedidosxFechas  '08-08-96','12-08-96'
+-------------------------------------------------------------------------------
+
+Ejemplo3
+*para  un codigo de cliente y un año especificos datos como parametro listar
+10 Pedido, FechaPedido, Nombre, Producto, Precio
+
+create procedure PedidoxClientexAño2
+@id  char(5),
+@año int
+as
+select O.OrderID, OrderDate, ProductName, OD.UnitPrice
+from Orders O, OrderDetails OD, Products P
+where O.OrderID=OD.OrderID AND
+      OD.ProductID=P.ProductID AND
+      YEAR(OrderDate)=@año  AND
+      CustomerID=@id
+      
+exec PedidoxClientexAño2 'ALFKI', 1996
+
+--------------------------------------------------------------------------------
+
+Ejemplo4
+Listar los pedidos de un año determinado por defecto tener el año 1996
+
+create procedure Pedidosxaño
+@año int=1996
+as
+  select * from Orders
+  where YEAR(OrderDate)=@año
+  
+  exec PedidosxAño
+  exec Pedidosxaño 1997
+
+----------------------------------------------------------------------------------
+
+Ejemplo5
+Devolver el numero de pedidos de un determinado año.
+
+create procedure ClientePedidos1
+ @año int
+ as
+ select COUNT(*)
+ from Orders
+ where YEAR(OrderDate)=@año
+ 
+ exec ClientePedidos1 1997
+
+----------------------------------------------------------------------------------
+
+Ejemplo6
+Devolver en un parmetro de salida del numero de pedidos de un determinado año
+
+create procedure CuentaPedidos2222
+ @año int,
+ @q int OUTPUT
+ AS
+   select @q=COUNT(*)
+   from Orders
+   where YEAR(OrderDate)=@año
+   
+ 
+ Declare @cant int  
+ exec CuentaPedidos2222 1997,@cant output
+ print @cant
+
+------------------------------------------------------------------------------------
+
+Ejemplo7
+Insertar 1, 'Eastern' en la tabla region
+
+create procedure InsertaRegion23
+ @id int,
+ @nombre varchar(50)
+ as
+  BEGIN TRAN TranRegion
+  insert into Region values(@id,@nombre)
+  if @@error=0
+	BEGIN
+	    COMMIT TRAN TranRegion
+	    print 'Region registrada'
+	    END
+	    ELSE
+	        BEGIN
+	        print ERROR_MESSAGE()
+	        ROLLBACK TRAN TranRegion
+	    END
+	    
+	exec InsertaRegion23 1,'Eastern'
+	exec InsertaRegion23 5,'Eastern'
+
+
+
+
+
+
+
+

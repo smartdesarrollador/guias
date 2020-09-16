@@ -1,0 +1,99 @@
+procedimiento almacenado
+store procedure
+sintaxis
+create procedure nombre
+@parametro 1  tipo de dato
+@parametro 2  tipo de dato
+as
+[begin]
+sentiencia sql
+[end]
+
+ejemplo 1
+*procedimiento que liste los clientes
+
+create procedure usp.consultaclientes
+as
+begin
+select customerID,CompanyName
+from Customers
+end
+exec usp.consultaclientes
+--------------------------------
+
+ejemplo 2
+listar pedidos entre 2 fechas
+
+Create procedure PedidosxFechas
+@f1  DataTime
+@f2  DataTime
+as
+select * from Orders
+where OrderDate betweeen @f1 and @f2
+exec PedidosFecha'08-08-96', '12-08-96'
+
+ejemplo 3
+para un codigo de cliente y un año especifico dados como 
+parametro listar 10 pedidos,fechapedido,nombre,precioproducto
+
+create procedure PedidoxClientexAño
+@id char(5),
+@año int
+as
+select o.orderid, orderdate, prodctname, unitprice
+from order o, orderdetails od, products p
+where o.orderID =OD.orderid and
+od.productid=p.productid and
+year(orderdate)=@año and
+customerid= @id
+exec pedidoxclientexaño, 'alfki', 1996 'BONAP'
+
+ejemplo 4
+
+
+
+ejemplo 5
+devolver el # pedidos de un determinado año
+
+create procedure cuentapedidos1
+@año int
+as
+select count(*)
+from orders
+where year(orderdate)=@año
+exec cuentapedidos 1997
+
+
+ejemplo 6
+devolver en un parametro de salida el #pedidos de un determinado año
+
+create procedure CuentaPedidos2
+@año int
+@ q int OUTPUT
+as
+select @q=count(*)
+from orders
+where year(orderdate)=@año
+
+exec CuentaPedidos2 1997
+
+
+ejemplo 7
+transaccion
+comnit
+rollback
+*insertar 1 'eastern' en la tabla region
+create procedure insertaRegion
+@id int,
+@nombre varchar(50)
+as
+begin tran 
+insert into region return values(@id,@nombre)
+if @@ error=o
+begin
+commut train tranregion
+print region registro de 
+end
+
+
+

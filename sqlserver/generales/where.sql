@@ -1,0 +1,2 @@
+SELECT * FROM Persona
+WHERE Id=1;

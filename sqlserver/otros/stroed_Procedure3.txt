@@ -1,0 +1,155 @@
+alter procedure descuento
+@nombre nvarchar(30)
+as
+if exists(
+select fa_importe
+from factura
+where fa_importe>50
+)begin
+   select fa_importe as importe,SUM((20.0/100.0)*fa_importe)as descuento,fa_importe-SUM((20.0/100.0)*fa_importe)as importeMenosDescuento
+   from factura f,Surtidor s,maquinaRegistradora m, Usuario u
+   where f.sur_codigo=s.sur_codigo and s.maquiRe_codigo=m.maquiRe_codigo and m.ven_codigo=u.ven_codigo
+   and f.fa_importe>50 and u.usu_nombreUsuario=@nombre
+   group by fa_importe
+   
+ end
+  else
+    begin
+       print 'no se encontro ninguno'
+    end
+    
+
+ exec descuento 'num1'
+
+----------------------------------------------------------------------------------------------------------------------
+ 
+alter procedure ProductoMasVendido11
+ @mes int
+ as
+ begin
+ select p.pro_nombre,MAX(t.ti_importe)
+ from producto p, ticket t
+ where p.pro_codigo=t.pro_codigo 
+ and MONTH(t.ti_fecha)=@mes
+ group by p.pro_nombre
+ end
+ 
+ exec ProductoMasVendido11 01
+
+--------------------------------------------------------------------------------------------------------------------
+
+create procedure mayorRecaudacion
+ @mes int
+as
+ select maquiRe_nombre,MAX(f.fa_importe)
+ from maquinaRegistradora m,Surtidor s,factura f
+ where m.maquiRe_codigo=s.maquiRe_codigo and s.sur_codigo=f.sur_codigo
+ and MONTH(f.fa_fecha)= @mes 
+ group by maquiRe_nombre  
+ 
+ exec mayorRecaudacion 02
+ 
+------------------------------------------------------------------------------------------------------------------------
+
+create procedure mejorVendedor
+ @mayor int
+ as
+ begin
+ select v.ven_nombre,MAX(f.fa_importe)
+ from Vendedor v,distrito d,clienteCredito c,tarjeta_vale t,factura f
+ where v.dis_codigo=d.dis_codigo and d.dis_codigo=c.dis_codigo and c.cliCre_codigo=t.cliCre_codigo and t.codigo=f.codigo
+ and MONTH(f.fa_fecha)=@mayor
+ group by v.ven_nombre
+ end
+ 
+ exec mejorVendedor 01
+
+---------------------------------------------------------------------------------------------------------------------
+
+create procedure mejorVendedor1
+ @mayor int
+ as
+ if exists(
+ select v.ven_nombre,MAX(f.fa_importe)
+ from Vendedor v,distrito d,clienteCredito c,tarjeta_vale t,factura f
+ where v.dis_codigo=d.dis_codigo and d.dis_codigo=c.dis_codigo and c.cliCre_codigo=t.cliCre_codigo and t.codigo=f.codigo
+ and f.fa_importe>=100
+ group by v.ven_nombre
+ 
+ )
+ begin
+ select v.ven_nombre,MAX(f.fa_importe)
+ from Vendedor v,distrito d,clienteCredito c,tarjeta_vale t,factura f
+ where v.dis_codigo=d.dis_codigo and d.dis_codigo=c.dis_codigo and c.cliCre_codigo=t.cliCre_codigo and t.codigo=f.codigo
+ and MONTH(f.fa_fecha)=@mayor
+ group by v.ven_nombre
+ end
+ else
+     begin
+     print 'no se a encontrado ningun registro'
+     end
+    
+ 
+ exec mejorVendedor1 01
+
+---------------------------------------------------------------------------------------------------------------------
+
+create procedure mayorRecaudacion11
+ @mes int
+as
+if exists(
+select maquiRe_nombre,MAX(f.fa_importe)
+ from maquinaRegistradora m,Surtidor s,factura f
+ where m.maquiRe_codigo=s.maquiRe_codigo and s.sur_codigo=f.sur_codigo
+ and  f.fa_importe>=100
+ group by maquiRe_nombre  
+)
+begin
+ select maquiRe_nombre,MAX(f.fa_importe)
+ from maquinaRegistradora m,Surtidor s,factura f
+ where m.maquiRe_codigo=s.maquiRe_codigo and s.sur_codigo=f.sur_codigo
+ and MONTH(f.fa_fecha)= @mes 
+ group by maquiRe_nombre  
+end
+else 
+begin
+ print ERROR_MESSAGE()
+end
+  
+
+ exec mayorRecaudacion11 01
+
+--------------------------------------------------------------------------------------------------------------------
+
+alter procedure Producto_Mas_Vendido
+ @año int
+ as
+ begin
+ select p.pro_nombre as nombreProducto,MAX(t.ti_importe) as maximoMonto
+ from producto p, ticket t
+ where p.pro_codigo=t.pro_codigo 
+ and year(t.ti_fecha)=@año
+ group by p.pro_nombre
+ order by 2 desc
+ end
+ 
+ exec Producto_Mas_Vendido 2013
+
+------------------------------------------------------------------------------------------
+
+create procedure Producto_Mas_Vendido
+ @año int
+ as
+ begin
+ select p.pro_nombre as nombreProducto,MAX(t.ti_importe) as maximoMonto
+ from producto p, ticket t
+ where p.pro_codigo=t.pro_codigo 
+ and year(t.ti_fecha)=@año
+ group by p.pro_nombre
+ order by 2 desc
+ end
+ 
+ exec Producto_Mas_Vendido 2013
+
+-------------------------------------------------------------------------------------------
+

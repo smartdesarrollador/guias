@@ -1,0 +1,12 @@
+select * from Mecanico
+select nombre from Mecanico
+select nombre as Mecanico from Mecanico
+select nombre from Mecanico where Codigo=3
+select  * from Mecanico where Codigo<=3
+select * from Mecanico where Nombre like '%jose%'
+select * from Mecanico where Nombre like '%s'
+select * from Mecanico where Nombre like '%[za]'
+select * from Mecanico where Nombre like '[B-N]%'
+select * from Mecanico order by Nombre desc 
+select * from Mecanico order by 2 desc
+select nombre as nick from Mecanico order by nick  

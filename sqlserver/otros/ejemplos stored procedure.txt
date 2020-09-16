@@ -1,0 +1,82 @@
+create procedure cliente
+As
+ begin
+     set nocount on
+        select * from clienteCredito
+     set nocount off
+end
+
+exec cliente
+
+-----------------------------------------------------------
+
+create procedure saludar2
+(
+@cNombre varchar(30)
+)
+as
+  set nocount on
+  
+  set @cNombre='HOLA ' + @cNombre
+  
+  select @cNombre as saludo
+  
+  execute saludar ' cesar'
+
+-----------------------------------------------------------
+
+alter procedure saludar2
+(
+@cNombre varchar(30)
+)
+as
+  set nocount on
+  
+  declare @cSaludo varchar(50)
+  
+  set @cSaludo='HOLA ' + @cNombre
+  
+  select @cSaludo
+  
+  execute saludar ' cesar'
+
+---------------------------------------------------------
+
+drop procedure saludar
+
+--------------------------------------------------------
+
+alter procedure calculadora
+(
+  @cOperacion varchar(20),
+  @nNum1 money,
+  @nNum2 money
+ )
+ 
+ as
+ set nocount on
+ declare @nResultado money
+ if @cOperacion='sumar'
+ select @nResultado=SUM(@nNum1 + @nNum2)
+ 
+ if @cOperacion ='restar'
+ select @nResultado=SUM(@nNum1 - @nNum2)
+ 
+ if @cOperacion ='multiplicar'
+ select @nResultado=SUM(@nNum1 * @nNum2)
+ 
+ 
+ 
+ if @cOperacion ='dividir'
+ select @nResultado=SUM(@nNum1/@nNum2)
+ 
+ select @nResultado as resultado
+ 
+ exec calculadora 'restar',10,3 
+
+----------------------------------------------------------
+
+
+
+
+
