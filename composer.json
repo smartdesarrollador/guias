@@ -1,0 +1,15 @@
+{
+    "name": "proyect/proyecto",
+    "description": "Guia",
+    "type": "proyect",
+    "require": {
+        "culqi/culqi-php": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "smartdesarrollador",
+            "email": "enrique_sistema_5000@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

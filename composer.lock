@@ -1,0 +1,120 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4264d3ff947537b003c5020e77b36358",
+    "packages": [
+        {
+            "name": "culqi/culqi-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:culqi/culqi-php.git",
+                "reference": "9eedcc75ef310c0f7925e1fbb55b4a700af72e90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/culqi/culqi-php/zipball/9eedcc75ef310c0f7925e1fbb55b4a700af72e90",
+                "reference": "9eedcc75ef310c0f7925e1fbb55b4a700af72e90",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "rmccue/requests": ">=1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.4.* || 4.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/Culqi/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Culqi and contributors",
+                    "homepage": "https://github.com/culqi/culqi-php/contributors"
+                }
+            ],
+            "description": "Cliente Culqi API para PHP",
+            "homepage": "https://culqi.com",
+            "keywords": [
+                "api",
+                "client",
+                "culqi",
+                "pagos",
+                "payments",
+                "peru",
+                "php"
+            ],
+            "time": "2019-10-02T15:25:45+00:00"
+        },
+        {
+            "name": "rmccue/requests",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmccue/Requests.git",
+                "reference": "58a0bbc28e99bd12777cede5326a561af7ccceb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/58a0bbc28e99bd12777cede5326a561af7ccceb4",
+                "reference": "58a0bbc28e99bd12777cede5326a561af7ccceb4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "<6.0",
+                "requests/test-server": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Requests": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "homepage": "http://ryanmccue.info"
+                }
+            ],
+            "description": "A HTTP library written in PHP, for human beings.",
+            "homepage": "http://github.com/rmccue/Requests",
+            "keywords": [
+                "curl",
+                "fsockopen",
+                "http",
+                "idna",
+                "ipv6",
+                "iri",
+                "sockets"
+            ],
+            "time": "2019-10-05T19:35:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "culqi/culqi-php": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
