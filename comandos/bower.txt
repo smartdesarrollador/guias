@@ -1,0 +1,23 @@
+PASO 1: INSTALACION GLOBAL
+
+npm install -g bower
+
+PASO 2: CREAR BOWER.JSON 
+
+bower init
+
+PASO 3: INSTALAR Y GUARDAR PAQUETES
+
+bower install NOMBRE_PAQUETE --save
+
+PASO 4: ENLAZAR A PAQUETE
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+
+
+REFERENCIA:
+
+https://desarrolloweb.com/articulos/uso-bower-gestor-dependencias.html
+
