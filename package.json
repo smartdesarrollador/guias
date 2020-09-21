@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartdesarrollador/guias.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartdesarrollador/guias/issues"
+  },
+  "homepage": "https://github.com/smartdesarrollador/guias#readme",
+  "dependencies": {
+    "sweetalert2": "^10.3.0"
+  }
+}
