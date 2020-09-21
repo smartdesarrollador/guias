@@ -1,0 +1,20 @@
+- Instalar: Prettier - Code formatter
+
+- Configurar para que ordene automaticamente cuando se guarde:
+   - Ctrl + Shift + p
+
+   - Escoger: Open User Settings
+
+   - Darle check en: Editor:format On Save
+
+
+
+
+
+
+   Referencia:
+
+   https://www.youtube.com/watch?v=9AK_8ucKhuk
+
+
+
