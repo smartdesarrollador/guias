@@ -1,0 +1,5 @@
+- Instalar Bookmarks
+- Colocamos el cursor donde queremos el marcador
+- Luego: Ctrl + Shif + P
+- Escribir: Bookmarks: Toogle labeled
+- Escribir el nombre del marcador.

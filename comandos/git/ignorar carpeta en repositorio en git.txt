@@ -1,0 +1,13 @@
+﻿paso 1:
+
+
+crear carpeta con nombre “.gitignore”
+
+
+paso 2:
+
+
+escribir nombre de archivo o carpeta a ignorar
+
+
+/nombre_de_carpeta

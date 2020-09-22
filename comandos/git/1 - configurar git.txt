@@ -1,0 +1,17 @@
+﻿CONFIGURAR GIT
+NOMBRE
+
+
+git config --global user.name "siste"
+
+
+CORREO
+
+
+git config --global user.email “galaxiaestrellaxl@hotmail.com”
+
+
+COMPROBACION DE CONFIGURACION
+
+
+git config --list

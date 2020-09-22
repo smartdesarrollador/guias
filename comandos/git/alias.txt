@@ -1,0 +1,1 @@
+﻿git config --global alias.nombre_de_alias 'comandos o texto'

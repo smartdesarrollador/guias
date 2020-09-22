@@ -1,0 +1,25 @@
+﻿PASO 1: SITUARSE EN LA RAMA MASTER
+
+
+PASO 2: crear la rama gh-pages
+
+
+git branch gh-pages
+
+
+PASO 3: SUBIR A GIT HUB
+
+
+git push origin gh-pages
+
+
+PASO 4: COMPROBAR SI SE A CREADO LA PAGINA.
+
+
+nombre_de_usurio_de_github.github.io/nombre_de_repositorio
+
+
+Ejemplo:
+
+
+https://smartdesarrollador.github.io/temp_frn_nd/

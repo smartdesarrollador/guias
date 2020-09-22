@@ -1,0 +1,89 @@
+﻿RAMAS
+
+
+CREAR RAMA
+
+
+git branch nombre_de_rama
+
+
+VER EN QUE RAMA NOS ENCONTRAMOS
+
+
+git branch
+
+
+MOVERSE A UNA RAMA
+
+
+git checkout nombre_de_rama
+
+
+FUSIONAR RAMAS
+
+
+* PASO 1:   Situarse en la rama que va a absorber una rama.(ejemplo rama master)
+
+
+* PASO 2:  Colocar la siguiente linea:
+                              
+                              git merge nombre_de_rama
+
+
+CREAR RAMA Y MOVERNOS A LA RAMA CREADA
+
+
+git checkout -b nombre_de_rama
+
+
+ELIMINAR  RAMA
+
+
+git branch -D nombre_de _rama
+
+
+
+
+
+
+VIDEO REFERENCIA:
+
+
+https://www.youtube.com/watch?v=-UQulO_0prM&index=4&list=PL9xYXqvLX2kMUrXTvDY6GI2hgacfy0rId
+
+
+
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Resultado de imagen para ESQUEMA RAMAS GIT 
+
+
+
+
+
+
+
+
+
+
+
+VIDEO DE REFERENCIA:
+
+
+https://www.youtube.com/watch?v=-UQulO_0prM&list=PLMQTIowvl2712bcc4NDsoqyKBUWGlidEw&index=4

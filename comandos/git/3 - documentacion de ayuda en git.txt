@@ -1,0 +1,16 @@
+﻿DOCUMENTACION DE AYUDA
+
+
+TODOS LOS COMANDOS DE GIT
+
+
+git help
+
+
+COMANDO ESPECIFICO
+
+
+git help nombre_de_comando
+
+
+ejemplo: git help status

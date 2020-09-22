@@ -1,0 +1,31 @@
+﻿INICIANDO PROYECTO
+
+
+INICIANDO GIT
+
+
+git init
+
+
+ESTADO DEL PROYECTO
+
+
+git status
+
+
+AGREGAR TODO
+
+
+git add -A
+
+
+CREANDO COMMIT
+
+
+git commit -m “mensaje”
+
+
+LISTAR COMMITS
+
+
+git log

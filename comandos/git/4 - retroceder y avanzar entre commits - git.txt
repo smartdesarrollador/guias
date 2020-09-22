@@ -1,0 +1,22 @@
+﻿RETROCEDER  Y AVANZAR ENTRE COMMITS
+
+
+RETROCEDER Y AVANZAR HACIA UN COMMIT
+
+
+git checkout codigo_del_commit
+
+
+
+
+EJEMPLO CODIGO DEL COMMIT(ejecutar “git log” y copiar el codigo del commit)
+
+
+  
+
+
+
+MOVER AL ULTIMO COMMIT
+
+
+git checkout master

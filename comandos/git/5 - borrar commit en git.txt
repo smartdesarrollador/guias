@@ -1,0 +1,21 @@
+﻿BORRAR COMMIT
+
+
+BORRAR SOLO EL COMMIT 
+
+
+git reset --soft codigo_del_commit
+
+
+
+
+BORRAR EL COMMIT Y TODA LA INFORMACION QUE PERTENECE AL COMMIT
+
+
+git reset --hard codigo_del_commit
+
+
+---------------------------------------------------------------------------------------------------------------
+
+
+EJEMPLO CODIGO DEL COMMIT(ejecutar “git log” y copiar el codigo del commit)
