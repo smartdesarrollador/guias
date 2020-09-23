@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/smartdesarrollador/guias#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "sweetalert2": "^10.3.0"
   }
 }
