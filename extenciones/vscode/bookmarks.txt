@@ -3,3 +3,11 @@
 - Luego: Ctrl + Shif + P
 - Escribir: Bookmarks: Toogle labeled
 - Escribir el nombre del marcador.
+
+-----------------------------------------------------
+
+#Configuracion para guardar los marcadores:
+
+- Files/Preferences/settings:
+
+- Marcar la casilla: Bookmarks:Show Commands In Context Menu

@@ -62,6 +62,16 @@ Highlight Matching Tag: Resalta y subraya etiqueta de apertura y cierre.
 
 Bracket Pair Colorizer: Le da color a las llaves y parentesis.
 
+#Laravel
+Laravel Blade Snippets: Snippets de blade de laravel.
+
+Laravel Blade Spacer: Da espacio entre las llaves.
+
+Laravel Extra Intellisense: Autocompleta variables propias de laravel.
+
+Laravel Snippets: Snippets de Facades de laravel como Route::, Request::, Session::. 
+
+
 
 
 
