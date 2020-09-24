@@ -1,0 +1,67 @@
+#Apariencia:
+
+Ayu: Le da estilos y colores al editor.
+
+vscode-icons: agrega iconos a las carpetas y archivos del proyecto.
+
+Prettier - Code formatter: Le da formato al codigo(lo ordena).
+
+
+#Sintaxis de lenguajes:
+
+Txt Syntax: Le da formato y algunos colores a los archivos .txt.
+
+JavaScript (ES6) code snippets: sintaxis JavaScript.
+
+
+
+#lenguajes:
+
+Spanish Language Pack for Visual Studio Code: Cambiar a idioma español.
+
+#Navegacion:
+
+Bookmarks: marcadores para navegar mas rapido entre el codigo.
+
+Project Manager: Guarda lista de proyectos.
+
+#Autocompletado:
+
+IntelliSense for CSS class names in HTML: Autocompleta clases css en html.
+
+
+#Snippets:
+
+Bootstrap 4, Font awesome 4, Font Awesome 5 Free & Pro snippets.
+
+
+#Sincronizacion:
+
+Live Server: Sincroniza los cambios del editor con el navegador.
+
+#Generador de Faker:
+
+vscode-faker: Genera nombres, textos, direcciones etc.
+
+
+
+#Codigo Colores:
+
+Color Highlight: Para visualizar mejor los codigo de colores.
+
+#Depurar:
+
+PHP Debug: Depura codigo php.
+
+Debugger for Chrome: Depurador para chrome.
+
+
+#Orientador:
+
+Highlight Matching Tag: Resalta y subraya etiqueta de apertura y cierre.
+
+Bracket Pair Colorizer: Le da color a las llaves y parentesis.
+
+
+
+
