@@ -1,0 +1,20 @@
+- Vimium: atajo de teclado en chrome.
+
+- Json Viewer: Poner formato y colores a los datos json en el navegador.
+
+- Gitpod Online IDE: Editor en la nube con previsualización.
+
+- JavaScript and CSS Code Beautifer: da una mejor apariencia a las librerias javascript y css para poder leerlos mejor.
+
+- wappalyzer: ve en que codigo esta hecho una pagina web.
+
+- Full Page Screen Capture: Captura toda la pagina de una web.
+
+
+
+
+
+
+REFERENCIA:
+
+https://www.youtube.com/watch?v=m_WrK_IEQIk
