@@ -16,6 +16,8 @@
 
             echo "La suma es : ".$c;
 
+            echo "texto";
+
             
             ?>
 
