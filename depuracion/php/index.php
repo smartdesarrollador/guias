@@ -10,11 +10,20 @@
     <h1>Depuracion Php</h1>
 
     <?php $a = 1;
-            $b = 2;
+            $b = 9;
+try {
+    echo $c = $a + $b;
+} catch (\Throwable $th) {
+    echo 'Message: ' .$th->getMessage();
+}
+            
 
-            $c = $a + $b;
-
-            echo "La suma es : ".$c;
+            if($c==3){
+                echo "La suma es : ".$c;
+            }else{
+                echo "no es el numero";
+            }
+            
 
             
             ?>
