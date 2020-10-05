@@ -1,3 +1,18 @@
+General
+
+- terminal: Alt + f12
+
+
+
+-------------------------------------------
+
+#Navegación
+
+- Navegar entre pestañas: Ctrl + tab
+
+
+
+
 # Uso básico, atajos de teclado y tips de PhpStorm
 
 https://www.youtube.com/watch?v=wz4zNGjLSNc
