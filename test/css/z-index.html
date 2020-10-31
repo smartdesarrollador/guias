@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor{
+            border:solid 1px black;
+            width: 400px;
+            height: 400px;
+            
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .uno{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+
+            position: relative;
+            top: 50px;
+            left: 50px;
+            z-index: 10;   
+        }
+
+        .dos{
+            background-color:blue;
+            width: 100px;
+            height: 100px;
+            
+            position: relative;
+            top: -30px;
+            left: 70px;
+            z-index: 20;
+            
+        }
+
+        .tres{
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            
+            position: relative;
+            top: -110px;
+            left: 90px;
+            z-index: 30;
+
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="uno">1</div>
+        <div class="dos">2</div>
+        <div class="tres">3</div>
+    </div>
+</body>
+</html>
+
+<!-- referencia:
+https://www.youtube.com/watch?v=V-DMoogk-3Y
+-->
