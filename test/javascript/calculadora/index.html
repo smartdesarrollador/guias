@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input id="valor_a" type="number" value="0">
+<input id="valor_b" type="number" value="0">
+<button onclick="sumar()">sumar</button>
+<button onclick="restar()">restar</button>
+<button onclick="multiplicar()">multiplicar</button>
+<button onclick="dividir()">dividir</button>
+<div id="demo"></div>
+
+<script>
+
+
+
+    
+
+        //valor inicial y valor colocado
+        //var a = 0;
+         var a = document.getElementById("valor_a");
+             a = parseInt(a.value);
+        
+        //var b = 0;
+        var b = document.getElementById("valor_b");
+            b = parseInt(b.value);
+       //console.log(b.value);
+    
+        var respuesta = 0;
+        var resultado = 0;
+
+        document.getElementById("demo").innerHTML = respuesta;
+
+        
+//evento suma
+        function sumar(){
+            var a = document.getElementById("valor_a");
+             a = parseInt(a.value);
+        
+        
+        var b = document.getElementById("valor_b");
+            b = parseInt(b.value);
+
+            respuesta = a + b;
+
+            //console.log(respuesta);
+           
+            document.getElementById("demo").innerHTML = respuesta;
+        }
+                
+                //console.log(sumar());
+
+//evento resta
+        function restar(){
+            var a = document.getElementById("valor_a");
+             a = parseInt(a.value);
+        
+        
+        var b = document.getElementById("valor_b");
+            b = parseInt(b.value);
+            respuesta = a - b;
+            
+            document.getElementById("demo").innerHTML = respuesta;
+        }
+
+        //imprimir o colocar resultado 
+        //resultado = restar();
+        //console.log(resultado);
+
+//evento multiplicacion
+        function multiplicar(){
+            var a = document.getElementById("valor_a");
+             a = parseInt(a.value);
+        
+        
+        var b = document.getElementById("valor_b");
+            b = parseInt(b.value);
+            respuesta = a * b;
+            document.getElementById("demo").innerHTML = respuesta;
+        }
+
+        //imprimir o colocar resultado 
+        //resultado = multiplicar(a,b);
+        //console.log(resultado);
+
+//evento dividir
+        function dividir(){
+            var a = document.getElementById("valor_a");
+             a = parseInt(a.value);
+        
+        
+        var b = document.getElementById("valor_b");
+            b = parseInt(b.value);
+            respuesta = a/b;
+            document.getElementById("demo").innerHTML = respuesta;
+        }
+
+        //imprimir o colocar resultado 
+        //resultado = dividir();
+        //console.log(resultado);
+        
+
+
+    
+        
+
+
+    </script>
+</body>
+</html>

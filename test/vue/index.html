@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="estilo.css">
+
+
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- <div id="app">
+    <h1>{{ titulo }}</h1>
+    <input type="text" v-model="nuevaFruta">
+    <button v-on:click="agregarFruta">Agregar</button>
+
+    <ul>
+      <li v-for="fruta of frutas">
+        {{fruta.cantidad}} - {{fruta.nombre}}
+        <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
+      </li>
+    </ul>
+  </div>-->
+
+  <div id="app">
+     <!-- <ul>
+      <li v-for="d of dato">
+        {{d.nombre}}
+      </li>
+    </ul> -->
+    
+    <ul>
+      <li v-for="d of helados">
+        {{d.sabor}}
+      </li>
+    </ul>
+    
+    <h1>{{ helados }}</h1>
+  </div>
+  
+  
+
+  <script src="https://unpkg.com/marked@0.3.6"></script>
+<script src="https://unpkg.com/lodash@4.16.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data:{
+        a: 1,
+        b: 4,
+        resultado: 0,
+        dato: [{nombre:"juan"},
+                {nombre:"Pedro"}],
+        sumado: 0,
+        helados: []
+    },
+    mounted(){
+      this.dato[0].nombre = "hola";
+      this.dato[1].nombre = "nuevo";
+
+      this.sumado = this.suma();
+      
+    },
+    methods:{
+      datos(){
+
+        return this.dato;
+            
+        },
+        suma(){
+            return this.resultado = this.a + this.b;
+        },
+        resta(){
+            return this.resultado = this.a + this.b;
+        },
+        multiplicacion(){
+            return this.resultado = this.a * this.b;
+        },
+        dividir(){
+            return this.resultado = this.a / this.b;
+        }
+        
+    },
+      created: function(){
+        var that = this;
+        axios.get('https://raw.githubusercontent.com/fernandoggaitan/vuejs_axios/master/response.json')
+        .then(function (response) {
+            that.helados = response.data;
+        })
+        .catch(function (error) {
+            console.log('Error: ' + error);
+        }); 
+      }
+})
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
