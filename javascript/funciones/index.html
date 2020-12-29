@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="texto">
+    <input type="text" id="busc">
+    <button onclick="buscar()">buscar</button>
+    <p id="demo"></p>
+
+    <script>
+        /*
+                function buscar(texto, buscar) {
+                    var str = texto;
+                    var pos = str.search(buscar);
+        
+                    return pos;
+                }
+                console.log(buscar("Hola mundo", "mundo"));
+                */
+
+        function buscar() {
+            var str = document.getElementById("texto").value;
+            var busca = document.getElementById("busc").value;
+            var pos = str.search(busca);
+            document.getElementById("demo").innerHTML = pos;
+
+        }
+
+    </script>
+</body>
+
+</html>
