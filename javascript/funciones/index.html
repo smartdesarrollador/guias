@@ -8,30 +8,28 @@
 </head>
 
 <body>
+    <!--
     <input type="text" id="texto">
-    <input type="text" id="busc">
-    <button onclick="buscar()">buscar</button>
+    <button onclick="quitarEspacios()">quitarEspacios</button>
     <p id="demo"></p>
-
+-->
     <script>
-        /*
-                function buscar(texto, buscar) {
-                    var str = texto;
-                    var pos = str.search(buscar);
-        
-                    return pos;
-                }
-                console.log(buscar("Hola mundo", "mundo"));
-                */
 
-        function buscar() {
-            var str = document.getElementById("texto").value;
-            var busca = document.getElementById("busc").value;
-            var pos = str.search(busca);
-            document.getElementById("demo").innerHTML = pos;
-
+        function quitarEspacios(texto) {
+            alert(texto.trim());
         }
+        console.log(quitarEspacios("     Hello World!     "));
 
+        //Resultado: Hello World!
+
+        /*
+                function quitarEspacios() {
+                    var texto = document.getElementById("texto").value;
+        
+                    alert(texto.trim());
+        
+                }
+        */
     </script>
 </body>
 
