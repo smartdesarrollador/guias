@@ -8,28 +8,38 @@
 </head>
 
 <body>
-    <!--
+
     <input type="text" id="texto">
-    <button onclick="quitarEspacios()">quitarEspacios</button>
+    <input type="text" id="indice">
+
+    <button onclick="obtenerCaracter()">obtener caracter</button>
     <p id="demo"></p>
--->
+
     <script>
-
-        function quitarEspacios(texto) {
-            alert(texto.trim());
-        }
-        console.log(quitarEspacios("     Hello World!     "));
-
-        //Resultado: Hello World!
-
         /*
-                function quitarEspacios() {
-                    var texto = document.getElementById("texto").value;
+                function obtenerCaracter(texto, indice) {
         
-                    alert(texto.trim());
-        
+                    str = texto.charAt(indice);
+                    return str;
                 }
+                console.log(obtenerCaracter("hola",1));
         */
+        //Resultado: hola000000
+
+
+        function obtenerCaracter() {
+            var texto = document.getElementById("texto").value;
+            var indice = document.getElementById("indice").value;
+
+
+            var indice = parseInt(indice);
+
+            str = texto.charAt(indice);
+            document.getElementById("demo").innerHTML = str;
+
+        }
+
+
     </script>
 </body>
 
